@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <script src="./app.js" defer></script>
+
+  <title>Frontend Mentor | Tip Calculator App</title>
+
+</head>
+
+<body>
+  <div class="logo">
+    <img src="./images/logo.svg" alt="Splitter Logo">
+  </div>
+
+  <main class="main-container">
+    <form action="#" class="main-form" novalidate>
+      <!-- <div class="bill-container">
+        <label for="bill" class="user-label">Bill</label>
+        <input type="number" name="bill" id="bill" class="user-input" placeholder="0">
+      </div> -->
+
+      <section class="tip-container">
+        <div class="bill-container">
+          <label for="bill" class="user-label">Bill</label>
+          <input type="number" name="bill" id="bill" class="user-input" placeholder="0">
+          <small></small>
+        </div>
+        <legend for="tip" class="tip-label">Select Tip %</legend>
+        <div class="grid">
+          <div class="box">
+            <input type="radio" name="tip" id="five">
+            <label for="five" class="tip-percentage">5%</label>
+          </div>
+
+          <div class="box">
+            <input type="radio" name="tip" id="ten">
+            <label for="ten" class="tip-percentage">10%</label>
+          </div>
+
+          <div class="box">
+            <input type="radio" name="tip" id="fifteen">
+            <label for="fifteen" class="tip-percentage">15%</label>
+          </div>
+
+          <div class="box">
+            <input type="radio" name="tip" id="twenty-five">
+            <label for="twenty-five" class="tip-percentage">25%</label>
+          </div>
+
+          <div class="box">
+            <input type="radio" name="tip" id="fifty">
+            <label for="fifty" class="tip-percentage">50%</label>
+          </div>
+
+          <div class="custom-box">
+            <input type="number" name="custom" id="custom" class="user-input custom" placeholder="Custom">
+            <label for="bill" class="custom-label"></label>
+          </div>
+        </div>
+
+        <div class="num-people-container">
+          <div class="user-label-container">
+            <label for="people" class="user-label">Number of People</label>
+            <small></small>
+          </div>
+          <input type="number" name="people" id="people" class="user-input num-people" placeholder="0">
+        </div>
+      </section>
+
+      <section class="results-container">
+        <div class="total-amounts-container">
+          <div class="totals">
+            <div class="amount-text">
+              <p class="main-text">Tip Amount</p>
+              <p class="per-person">/ person</p>
+            </div>
+            <div class="tip-amount-total">
+              <p class="tip number">$0.00</p>
+            </div>
+          </div>
+
+          <div class="totals">
+            <div class="amount-text">
+              <p class="main-text">Total</p>
+              <p class="per-person">/ person</p>
+            </div>
+            <div class="total-amount">
+              <p class="total number">$0.00</p>
+            </div>
+          </div>
+        </div>
+
+        <button type="reset">Reset</button>
+      </section>
+    </form>
+
+  </main>
+
+</body>
+
+</html>

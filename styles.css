@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* font-family: 'Space Mono', monospace; */
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-gray-cyan: hsl(186, 14%, 43%);
+    --gray-cyan: hsl(184, 14%, 56%);
+    --light-gray-cyan: hsl(185, 41%, 84%);
+    --very-light-gray-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --red: hsla(13, 70%, 61%, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    background-color: var(--light-gray-cyan);
+}
+
+.logo {
+    margin-top: 50px;
+    margin-bottom: 41px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 920px;
+    min-width: 345px;
+    height: fit-content;
+    background-color: var(--white);
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    /* padding: 32px; */
+}
+
+.main-form {
+    width: 100%;
+}
+
+.bill-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    /* margin: 32px; */
+}
+
+.user-label {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--dark-gray-cyan);
+    margin-bottom: 6px;
+}
+
+.user-input {
+    width: 100%;
+    height: 48px;
+    background-color: var(--very-light-gray-cyan);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--very-dark-cyan);
+    text-align: right;
+    border: 2px solid var(--very-light-gray-cyan);
+    border-radius: 5px;
+    padding: 6px 18px;
+    outline: none;
+    background-image: url(./images/icon-dollar.svg);
+    background-position: 6%;
+    background-repeat: no-repeat;
+    /* margin-bottom: 32px; */
+    caret-color: var(--strong-cyan);
+}
+
+.user-input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.user-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.user-input:hover {
+    cursor: pointer;
+    border: 2px solid var(--strong-cyan);
+}
+
+.user-input::placeholder {
+    mix-blend-mode: normal;
+    opacity: 0.35;
+}
+
+#bill {
+    margin-bottom: 6px;
+}
+
+.tip-container {
+    display: flex;
+    flex-direction: column;
+    margin: 32px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.tip-label {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--dark-gray-cyan);
+    margin-bottom: 16px;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip-percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: var(--very-dark-cyan);
+    border-radius: 5px;
+    color: var(--white);
+}
+
+.tip-percentage:hover {
+    cursor: pointer;
+    background-color: hsla(173, 61%, 77%, 1);
+    color: var(--very-dark-cyan);
+}
+
+input[type='radio']:checked+label {
+    background-color: hsla(172, 67%, 45%, 1);
+    color: var(--very-dark-cyan);
+}
+
+.custom-label {
+    display: none;
+}
+
+.custom {
+    margin-bottom: 0px;
+    background-image: none;
+    text-align: right;
+}
+
+.custom::placeholder {
+    color: hsla(180, 18%, 40%, 1);
+}
+
+.user-label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.num-people {
+    margin-top: 6px;
+    background-image: url(./images/icon-person.svg);
+}
+
+.results-container {
+    background-color: var(--very-dark-cyan);
+    padding: 37px 24px 24px 24px;
+    margin: 32px 24px;
+    border-radius: 15px;
+}
+
+.totals {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.totals:nth-last-child(1) {
+    margin-bottom: 32px;
+}
+
+.main-text {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--white);
+}
+
+.per-person {
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--gray-cyan);
+}
+
+.number {
+    font-size: 32px;
+    line-height: 47px;
+    letter-spacing: -0.66px;
+    color: var(--strong-cyan);
+}
+
+button {
+    width: 100%;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: var(--strong-cyan);
+    /* background-color: hsla(183, 78%, 24%, 1); */
+    text-transform: uppercase;
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+    border: none;
+    padding: 9px 33px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsla(172, 61%, 77%, 1);
+}
+
+small {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: var(--red);
+}
+
+
+/* --MEDIA QUERIES-- */
+
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-top: 0px;
+        /* margin-top: 163px; */
+        margin-bottom: 88px;
+    }
+
+    .main-container {
+        display: flex;
+        border-radius: 25px;
+    }
+
+    .tip-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 45px 48px 48px 48px;
+    }
+
+    .bill-container {
+        margin-bottom: 40px;
+    }
+
+    .results-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        margin: 32px 32px 32px 0px;
+    }
+
+    .main-form {
+        display: flex;
+        /* margin: 0px; */
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 16px;
+        column-gap: 14px;
+        margin-bottom: 40px;
+    }
+
+    .custom::placeholder {
+        font-size: 15px;
+    }
+
+    small {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .custom::placeholder {
+        font-size: 19px;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    .custom::placeholder {
+        font-size: 22px;
+    }
+}
