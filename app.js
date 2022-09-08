@@ -30,6 +30,7 @@ button.addEventListener('click', (e) => {
 
     billError.textContent = '';
     peopleError.textContent = '';
+    numPeople.style.border = '2px solid hsl(189, 41%, 97%)';
 
     if ((window.innerWidth || document.documentElement.clientWidth) < 768) {
         billContainer.style.marginBottom = '32px'
