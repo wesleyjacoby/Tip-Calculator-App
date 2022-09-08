@@ -10,11 +10,22 @@ const peopleError = document.querySelector('.people-error');
 
 const button = document.querySelector('button');
 
+const tipNumber = document.querySelector('.tip');
+const totalNumber = document.querySelector('.total');
+
+let tip = 0;
+
 button.addEventListener('click', (e) => {
     e.preventDefault();
 
     checkBill(bill.value);
     checkCustomTip(customPercent.value);
+    checkNumPeople(numPeople.value);
+
+    calculateTip(tip, customPercent.value);
+
+    tipNumber.textContent = tipPerPerson(bill.value, tip, numPeople.value);
+    totalNumber.textContent = totalPerPerson(bill.value, tip, numPeople.value);
 })
 
 function checkBill(bill) {
@@ -29,13 +40,20 @@ function checkBill(bill) {
         billContainer.style.marginBottom = '16px';
         return billError.textContent = 'Something went wrong';
     } else {
-        billContainer.style.marginBottom = '40px'
-        return billError.textContent = '';
+        if ((window.innerWidth || document.documentElement.clientWidth) < 768) {
+            billContainer.style.marginBottom = '32px'
+            return billError.textContent = ''
+        }
+        else {
+            billContainer.style.marginBottom = '40px'
+            return billError.textContent = '';
+        }
     }
 }
 
 function checkCustomTip(percent) {
-    console.log(customPercent.value)
+    console.log(percent);
+
     if (percent < 0 || percent > 100) {
         return customPercent.style.border = '2px solid hsla(13, 70%, 61%, 1)';
     } else {
@@ -43,24 +61,46 @@ function checkCustomTip(percent) {
     }
 }
 
-// customPercent.addEventListener('keyup', () => {
-//     console.log(customPercent.value);
+function checkNumPeople(people) {
 
-//     if (customPercent.value < 0 || customPercent.value > 100) {
-//         customPercent.style.border = '2px solid hsla(13, 70%, 61%, 1)';
-//     } else if (/\D/g.test(customPercent.value === true)) {
-//         customPercent.style.border = '2px solid hsla(13, 70%, 61%, 1)';
-//     } else {
-//         customPercent.style.border = '2px solid hsl(189, 41%, 97%)';
-//     }
-// })
-
-numPeople.addEventListener('keyup', () => {
-    console.log(numPeople.value);
-})
+    if (people < 0) {
+        numPeople.style.border = '2px solid hsla(13, 70%, 61%, 1)';
+        return peopleError.textContent = 'Really?'
+    } else if (people === '0') {
+        numPeople.style.border = '2px solid hsla(13, 70%, 61%, 1)';
+        return peopleError.textContent = "Can't be zero";
+    } else {
+        numPeople.style.border = '2px solid hsl(189, 41%, 97%)';
+        return peopleError.textContent = '';
+    }
+}
 
 tipPercentBox.forEach(box => {
     box.addEventListener('click', () => {
-        console.log(box.textContent);
+        tip = box.textContent.replace('%', '');
     })
 })
+
+function calculateTip(tip, customTip) {
+    if (customTip > 0) {
+        tip = customTip;
+
+        return tip;
+    }
+}
+
+function tipPerPerson(bill, tip, people) {
+    const tipPerPerson = (((bill * tip) / 100) / people).toFixed(2);
+    console.log(`Tip Per Person is: ${tipPerPerson}`);
+
+    return `$${tipPerPerson}`;
+}
+
+function totalPerPerson(bill, tip, people) {
+    const totalBill = ((bill * tip) / 100) + parseFloat(bill);
+
+    const totalPerPerson = (totalBill / people).toFixed(2);
+    console.log(`Total Per Person: ${totalPerPerson}`);
+
+    return `$${totalPerPerson}`;
+}

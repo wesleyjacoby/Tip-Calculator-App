@@ -200,6 +200,7 @@ input[type='radio']:checked+label {
 .totals {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 22px;
 }
 
@@ -305,6 +306,12 @@ small {
 
     small {
         font-size: 16px;
+    }
+
+    .number {
+        font-size: 48px;
+        line-height: 71px;
+        letter-spacing: -1px;
     }
 }
 
