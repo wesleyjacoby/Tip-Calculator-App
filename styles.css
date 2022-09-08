@@ -100,7 +100,7 @@ input::-webkit-inner-spin-button {
     -moz-appearance: textfield;
 }
 
-.user-input:hover {
+.user-input:hover:enabled {
     cursor: pointer;
     border: 2px solid var(--strong-cyan);
 }
@@ -233,8 +233,8 @@ button {
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-    background-color: var(--strong-cyan);
-    /* background-color: hsla(183, 78%, 24%, 1); */
+    /* background-color: var(--strong-cyan); */
+    background-color: hsla(183, 78%, 24%, 1);
     text-transform: uppercase;
     color: var(--very-dark-cyan);
     border-radius: 5px;
@@ -242,7 +242,11 @@ button {
     padding: 9px 33px;
 }
 
-button:hover {
+button:enabled {
+    background-color: var(--strong-cyan);
+}
+
+button:hover:enabled {
     cursor: pointer;
     background-color: hsla(172, 61%, 77%, 1);
 }

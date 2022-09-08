@@ -1,3 +1,5 @@
+const form = document.querySelector('.main-form');
+
 const bill = document.querySelector('#bill');
 const billContainer = document.querySelector('.bill-container');
 
@@ -18,8 +20,25 @@ let tip = 0;
 button.addEventListener('click', (e) => {
     e.preventDefault();
 
+    form.reset();
+    numPeople.disabled = true;
+    button.disabled = true;
+
+    tipNumber.textContent = '$0.00';
+    totalNumber.textContent = '$0.00';
+})
+
+bill.addEventListener('keyup', () => {
     checkBill(bill.value);
+    numPeople.disabled = false;
+    button.disabled = false;
+})
+
+customPercent.addEventListener('keyup', () => {
     checkCustomTip(customPercent.value);
+})
+
+numPeople.addEventListener('keyup', () => {
     checkNumPeople(numPeople.value);
 
     calculateTip(tip, customPercent.value);
@@ -29,16 +48,13 @@ button.addEventListener('click', (e) => {
 })
 
 function checkBill(bill) {
-    console.log(bill);
+
     if (bill < 0) {
         billContainer.style.marginBottom = '16px';
         return billError.textContent = 'Seriously?';
     } else if (bill === '0') {
         billContainer.style.marginBottom = '16px';
         return billError.textContent = "Can't be zero";
-    } else if (bill === '') {
-        billContainer.style.marginBottom = '16px';
-        return billError.textContent = 'Something went wrong';
     } else {
         if ((window.innerWidth || document.documentElement.clientWidth) < 768) {
             billContainer.style.marginBottom = '32px'
@@ -91,7 +107,6 @@ function calculateTip(tip, customTip) {
 
 function tipPerPerson(bill, tip, people) {
     const tipPerPerson = (((bill * tip) / 100) / people).toFixed(2);
-    console.log(`Tip Per Person is: ${tipPerPerson}`);
 
     return `$${tipPerPerson}`;
 }
@@ -100,7 +115,6 @@ function totalPerPerson(bill, tip, people) {
     const totalBill = ((bill * tip) / 100) + parseFloat(bill);
 
     const totalPerPerson = (totalBill / people).toFixed(2);
-    console.log(`Total Per Person: ${totalPerPerson}`);
 
     return `$${totalPerPerson}`;
 }
