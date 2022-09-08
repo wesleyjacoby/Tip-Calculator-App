@@ -29,13 +29,13 @@ body {
     min-height: 100vh;
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     background-color: var(--light-gray-cyan);
 }
 
 .logo {
-    margin-top: 50px;
-    margin-bottom: 41px;
+    margin-top: 3.125rem;
+    margin-bottom: 2.5625rem;
 }
 
 .main-container {
@@ -44,8 +44,8 @@ body {
     min-width: 345px;
     height: fit-content;
     background-color: var(--white);
-    border-radius: 25px 25px 0px 0px;
-    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    border-radius: 1.5625rem 1.5625rem 0rem 0rem;
+    box-shadow: 0rem 2rem 2.6875rem rgba(79, 166, 175, 0.200735);
 }
 
 .main-form {
@@ -55,29 +55,29 @@ body {
 .bill-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .user-label {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: var(--dark-gray-cyan);
-    margin-bottom: 6px;
+    margin-bottom: 0.375rem;
 }
 
 .user-input {
     width: 100%;
-    height: 48px;
+    height: 3rem;
     background-color: var(--very-light-gray-cyan);
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
     color: var(--very-dark-cyan);
     text-align: right;
     border: 2px solid var(--very-light-gray-cyan);
     border-radius: 5px;
-    padding: 6px 18px;
+    padding: 0.375rem 1.125rem;
     outline: none;
     background-image: url(./images/icon-dollar.svg);
     background-position: 6%;
@@ -107,27 +107,27 @@ input::-webkit-inner-spin-button {
 }
 
 #bill {
-    margin-bottom: 6px;
+    margin-bottom: 0.375rem;
 }
 
 .tip-container {
     display: flex;
     flex-direction: column;
-    margin: 32px;
+    margin: 2rem;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .tip-label {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: var(--dark-gray-cyan);
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 input[type='radio'] {
@@ -145,7 +145,7 @@ input[type='radio'] {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 48px;
+    height: 3rem;
     background-color: var(--very-dark-cyan);
     border-radius: 5px;
     color: var(--white);
@@ -168,7 +168,7 @@ input[type='radio']:checked+label {
 }
 
 .custom {
-    margin-bottom: 0px;
+    margin-bottom: 0rem;
     background-image: none;
     text-align: right;
 }
@@ -183,43 +183,43 @@ input[type='radio']:checked+label {
 }
 
 .num-people {
-    margin-top: 6px;
+    margin-top: 0.375rem;
     background-image: url(./images/icon-person.svg);
 }
 
 .results-container {
     background-color: var(--very-dark-cyan);
-    padding: 37px 24px 24px 24px;
-    margin: 32px 24px;
-    border-radius: 15px;
+    padding: 2.3125rem 1.5rem 1.5rem 1.5rem;
+    margin: 2rem 1.5rem;
+    border-radius: 0.9375rem;
 }
 
 .totals {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 1.375rem;
 }
 
 .totals:nth-last-child(1) {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .main-text {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: var(--white);
 }
 
 .per-person {
-    font-size: 13px;
-    line-height: 19px;
+    font-size: 0.8125rem;
+    line-height: 1.1875rem;
     color: var(--gray-cyan);
 }
 
 .number {
-    font-size: 32px;
-    line-height: 47px;
+    font-size: 2rem;
+    line-height: 2.9375rem;
     letter-spacing: -0.66px;
     color: var(--strong-cyan);
 }
@@ -228,14 +228,14 @@ button {
     width: 100%;
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
     background-color: hsla(183, 78%, 24%, 1);
     text-transform: uppercase;
     color: var(--very-dark-cyan);
     border-radius: 5px;
     border: none;
-    padding: 9px 33px;
+    padding: 0.5625rem 2.0625rem;
 }
 
 button:enabled {
@@ -249,8 +249,8 @@ button:hover:enabled {
 }
 
 small {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
     text-align: right;
     color: var(--red);
 }
@@ -260,24 +260,24 @@ small {
 
 @media screen and (min-width: 768px) {
     .logo {
-        margin-top: 0px;
-        margin-bottom: 88px;
+        margin-top: 0rem;
+        margin-bottom: 5.5rem;
     }
 
     .main-container {
         display: flex;
-        border-radius: 25px;
+        border-radius: 1.5625rem;
     }
 
     .tip-container {
         display: flex;
         flex-direction: column;
         width: 50%;
-        margin: 45px 48px 48px 48px;
+        margin: 2.8125rem 3rem 3rem 3rem;
     }
 
     .bill-container {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
 
     .results-container {
@@ -285,7 +285,7 @@ small {
         flex-direction: column;
         justify-content: space-between;
         width: 50%;
-        margin: 32px 32px 32px 0px;
+        margin: 2rem 2rem 2rem 0rem;
     }
 
     .main-form {
@@ -294,34 +294,34 @@ small {
 
     .grid {
         grid-template-columns: repeat(3, 1fr);
-        row-gap: 16px;
-        column-gap: 14px;
-        margin-bottom: 40px;
+        row-gap: 1rem;
+        column-gap: 0.875rem;
+        margin-bottom: 2.5rem;
     }
 
     .custom::placeholder {
-        font-size: 15px;
+        font-size: 0.9375rem;
     }
 
     small {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .number {
-        font-size: 48px;
-        line-height: 71px;
+        font-size: 3rem;
+        line-height: 4.4375rem;
         letter-spacing: -1px;
     }
 }
 
 @media screen and (min-width: 850px) {
     .custom::placeholder {
-        font-size: 19px;
+        font-size: 1.1875rem;
     }
 }
 
 @media screen and (min-width: 920px) {
     .custom::placeholder {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 }
